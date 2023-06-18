@@ -21,24 +21,26 @@ module.exports = {
         lightred:'#FF8C8C',
         purple:'#AA75FF',
         purplelight:'#E3D2FF',
-        purplelight2: '#D0B3FF',
-        zeit:'#FFC325',
-        youtern:'#2fc64d'
+        purplelight2: '#D0B3FF'
       },
-      
+      boxShadow:{
+        sm:"0px 4px 6px rgba(0, 0, 0, 0.06)"
+      },
       fontFamily: {
         syne: ["Syne, sans-serif"],
         dm: ["DM Sans, sans-serif"],
         code:["Azeret Mono, monospace"]
       },
-
+      fontSize: {
+        '7xl':'7rem'
+      },
       container: {
         padding: {
           DEFAULT: '1rem',
           sm: '2rem',
           lg: '4rem',
           xl: '6rem',
-          '2xl': '8rem',
+          '2xl': '10rem',
         },
         center: true
       },

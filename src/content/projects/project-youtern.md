@@ -1,7 +1,9 @@
 ---
+slug: youtern
 title: Youtern
 image: ../../images/projects/youtern.png
-color: 'youtern'
+color: '#2fc64d'
+desc: A large scale platform made for finding and posting internships. Made on Angular with performace, security in mind.
 technologies:
   - name: Angular
     image: ../../images/logos/angular.png

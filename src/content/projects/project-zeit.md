@@ -1,7 +1,9 @@
 ---
+slug: zeit
 title: Zeit Labs
 image: ../../images/projects/zeit.png
-color: 'zeit'
+color: '#FFC325'
+desc: Official website for Zeit Labs. Created with beautiful design and eye-catching animations using GSAP and ScrollMagic. Optimized for performance.
 technologies:
   - name: Angular
     image: ../../images/logos/angular.png
@@ -15,5 +17,29 @@ technologies:
     image: ../../images/logos/js.png
 
 ---
+# Requirements
 
-This is a description of my project.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book..
+
+# Process
+
+Creating a aesthetically pleasing and design-centered website
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book..
+
+# Snapshots
+
+![Image 1](/src/images/projects/zeit/hero-section.png) ![Image 2](/src/images/projects/zeit/features.png)
+
+![Image 3](/src/images/projects/zeit/contact-section.png)
+
+
+# Challenges
+
+- Lorem Ipsum is simply dummy remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing text of the printing
+- Lorem Ipsum is simply dummy remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing text of the printing
+- Lorem Ipsum is simply dummy remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing text of the printing
+
+# Learnings
+
+- Convert this text to a Markdown file

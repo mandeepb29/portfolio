@@ -1,12 +1,11 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import Navbar from "./navbar";
 import Footer from "./footer";
-const Layout = ({ pageTitle, children }) => {
-
+const Layout = ({ pageTitle, children,showWhiteHeader=false }) => {
+  console.log("Layout--------",pageTitle,children);
   return (
-    <div className="bg-dark">
-        <Navbar></Navbar>
+    <div className={showWhiteHeader ? "bg-light-gr" : "bg-dark"}>
+        <Navbar isWhite={showWhiteHeader}></Navbar>
         <main>
           {children}
         </main>

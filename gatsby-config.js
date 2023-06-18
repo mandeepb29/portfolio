@@ -14,7 +14,19 @@ module.exports = {
   plugins: [
     //"gatsby-plugin-styled-components",
    "gatsby-plugin-postcss",
-   'gatsby-transformer-remark',
+   {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        {
+          resolve: `gatsby-remark-images`,
+          options: {
+            maxWidth: 800,
+          },
+        },
+      ],
+    },
+  },
    `gatsby-plugin-sharp`,
    `gatsby-transformer-sharp`,
    `gatsby-plugin-image`,
@@ -32,11 +44,18 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-env-variables",
-    //   options: {
-    //     allowList: ["API_SECRET_KEY"],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
+      },
+    },
   ]
 };

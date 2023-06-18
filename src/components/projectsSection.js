@@ -20,6 +20,7 @@ const ProjectsSection = () => {
             }
             title
             color
+            desc
             technologies {
               image {
                 childImageSharp {

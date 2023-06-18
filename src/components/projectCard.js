@@ -3,27 +3,15 @@ import * as styles from "./projectCard.module.css";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 function ProjectCard({project}) {
-  console.log("props projects -- ", project);
-  const items = [];
+console.log("props projects -- ", project);
 
  let thumbnailImage = getImage(project?.image?.childImageSharp?.gatsbyImageData)
 const container = document.getElementById("projectCard");
 const contentRadius = 880;
 const numCircles = 5;
 const angle = 180 / (numCircles - 1);
-project?.technologies.forEach((el,i) => {
-  items.push({name:el.name, image:getImage(project?.technologies[i]?.image?.childImageSharp?.gatsbyImageData) })
-})
 
-let colorClass;
-switch(project.color){
-  case 'zeit':
-    colorClass='text-zeit'
-    break;
-  case 'youtern':
-    colorClass='text-youtern'
-    break;
-}
+
 // for (let i = 0; i < numCircles; i++) {
 //   const circle = document.createElement("div");
 //   circle.classList.add("circle");
@@ -43,11 +31,11 @@ switch(project.color){
        <GatsbyImage image={thumbnailImage} className={styles.projectImg} />
         {/* <img src={project?.image} className={styles.projectImg} alt={project?.title} /> */}
             <div className={`${styles.projectCardContent} h-[54rem] w-[54rem]`}>
-                <p className={styles.heading + ' ' + colorClass}>
+                <p className={styles.heading} style={{color:project?.color}}>
                 {project?.title}
                 </p>
                 <p className={styles.description}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+                  {project?.desc}
                 </p>
                 <button className="btn btn-primary mt-6">
                   <span>
