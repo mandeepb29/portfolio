@@ -1,30 +1,10 @@
 import React from 'react'
 import * as styles from "./projectCard.module.css";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from "gatsby";
 
 function ProjectCard({project}) {
-console.log("props projects -- ", project);
-
  let thumbnailImage = getImage(project?.image?.childImageSharp?.gatsbyImageData)
-const container = document.getElementById("projectCard");
-const contentRadius = 880;
-const numCircles = 5;
-const angle = 180 / (numCircles - 1);
-
-
-// for (let i = 0; i < numCircles; i++) {
-//   const circle = document.createElement("div");
-//   circle.classList.add("circle");
-//   const x = Math.round(contentRadius * Math.sin((angle * i * Math.PI) / 180));
-//   const y = Math.round(contentRadius * Math.cos((angle * i * Math.PI) / 180));
-  
-//   // Only position the circle if it's in the upper half of the container
-//   if (y <= contentRadius) {
-//     circle.style.top = contentRadius - y + "px";
-//     circle.style.left = contentRadius + x + "px";
-//     container.appendChild(circle);
-//   }
-// }
 
   return (
     <div className={styles.projectCard} id="projectCard">
@@ -37,11 +17,11 @@ const angle = 180 / (numCircles - 1);
                 <p className={styles.description}>
                   {project?.desc}
                 </p>
-                <button className="btn btn-primary mt-6">
+                <Link className="btn btn-primary mt-6 inline-flex" to={`project/${project?.slug}`}>
                   <span>
                   see more details
                   </span>
-                  </button>
+                  </Link>
 
             </div>
   

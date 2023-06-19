@@ -3,7 +3,7 @@
     border: 2px solid hsl(0, 0%, 100%);
     border-radius: 12rem;
     backdrop-filter: blur(4px);
-    background:linear-gradient(to bottom, rgba(255, 255, 255, 0.308), #FFFFFF , rgba(255, 255, 255, 0.81));
+    background:linear-gradient(to bottom, rgba(255, 255, 255, 0.308) 2%,rgba(255, 255, 255, 0.81) 10%, #FFFFFF  80%, rgba(255, 255, 255, 0.81));
 }
 
 .content{
@@ -24,3 +24,8 @@
 .content ul li:before{
     content: "→"; @apply text-2xl inline-block mr-2
 }
+
+.content .image-grid p{
+    @apply grid grid-cols-2 gap-4
+}
+

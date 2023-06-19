@@ -21,6 +21,7 @@ const ProjectsSection = () => {
             title
             color
             desc
+            slug
             technologies {
               image {
                 childImageSharp {

@@ -32,7 +32,7 @@ module.exports = {
         code:["Azeret Mono, monospace"]
       },
       fontSize: {
-        '7xl':'7rem'
+        '7xl':'6.5rem'
       },
       container: {
         padding: {
