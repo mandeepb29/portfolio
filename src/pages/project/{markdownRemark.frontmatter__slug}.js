@@ -129,9 +129,9 @@ export default function ProjectTemplate({
                 made using
               </p>
 
-              <div className="flex gap-6">
+              <div>
                 {frontmatter?.technologies?.map(item => (
-                  <div className="flex gap-2 items-center shadow-sm px-6 py-2 rounded-full bg-white">
+                  <div className="inline-flex gap-2 mr-4 mb-4 items-center shadow-sm px-6 py-2 rounded-full bg-white">
                     <GatsbyImage class='w-6 h-auto object-contain' image={getImage(item?.image?.childImageSharp?.gatsbyImageData)} alt={item.name} />
                     <p className='text-sm text-dark font-bold'>{item.name}</p>
                   </div>
@@ -147,7 +147,7 @@ export default function ProjectTemplate({
         </div>
         <div className="container">
           <Link className="py-16 block" to={`/project/` + nextProject?.slug}>
-            <p className="group flex gap-2 items-center text-gr-link">
+            <p className="group inline-flex gap-2 items-center text-gr-link">
               <span className="font-bold text-darkgrey text-lg">Next Project</span>
               <img src={RightIcon} className='transition-all ease-out-cubic w-12 group-hover:translate-x-2 group-hover:opacity-[.25]' alt="Visit Project" />
             </p>

@@ -28,11 +28,27 @@ Creating a aesthetically pleasing and design-centered website
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book..
 
 # Snapshots
-<div class="image-grid">
+
+<div class="image-row">
+  <div class="image-column">
 
 ![Image 1](../../images/projects/zeit/hero-section.png)
+
+  </div>
+  <div class="image-column">
+
 ![Image 2](../../images/projects/zeit/features.png)
+
+  </div>
+    <div class="image-column">
+
 ![Image 3](../../images/projects/zeit/contact-section.png)
+
+  </div>
+  
+</div>
+
+<div class="image-row">
 
 </div>
 

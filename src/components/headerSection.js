@@ -13,7 +13,7 @@ const HeaderSection = () => {
         <div className='border-b border-bordergrey'>
         <p className='font-code text-sm sm:text-md md:text-lg text-lightgray'>Hello, I’m</p>
         <h1 className='text-gradient bg-gradient-to-r from-green to-yellow mb-2'>Mandeep Baghel</h1>
-        <p className='text-lightgray max-w-2xl text-sm sm:text-md md:text-[18px] font-code mt-4 leading-5 md:leading-9 mb-16'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+        <p className='text-lightgray max-w-2xl text-sm sm:text-md md:text-[18px] font-code mt-4 leading-6 md:leading-9 lg:leading-10 mb-16'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
         </div>
         <div className='m-div'>
            <h6 className='mb-head text-white'>I love to do...</h6>

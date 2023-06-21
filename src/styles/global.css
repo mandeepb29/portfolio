@@ -6,11 +6,11 @@
 
 @layer base {
     section {
-        @apply py-16 md:py-20;
+        @apply py-12 md:py-16 lg:py-20;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        @apply font-syne font-bold;
+        @apply font-syne;
     }
 
     p {
@@ -22,7 +22,7 @@
     }
 
     h2 {
-        @apply text-4xl md:text-4xl tracking-tight;
+        @apply text-3xl md:text-4xl tracking-tight;
     }
 
     h3 {
@@ -101,6 +101,25 @@
         background: linear-gradient(92.68deg, #FFF6EB 1.15%, #FFFFFF 56.24%, #FBF5FF 100%);
     }
 }
+/* 
+.image-grid p{
+    @apply grid grid-cols-2 gap-4;
+
+} */
+
+.image-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Adjust the minimum width and column flexibility as needed */
+    grid-gap: 1rem; /* Adjust the gap between images */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-column {
+    /* padding: 10px; */
+  }
+  
+
 
 @keyframes fadeup {
 
@@ -115,4 +134,10 @@
         display:block;
         transform: translateY(0);
     }
+}
+
+/*library overrides*/
+
+.owl-carousel .owl-stage{
+    @apply md:pl-0;
 }

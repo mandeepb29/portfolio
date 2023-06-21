@@ -232,7 +232,7 @@ const SkillsSection = () => {
   return (
     <div>
       <InView as="div" onChange={handleSectionVisibility} threshold={0.5}>
-        <section className='relative bg-black pb-32 min-h-screen'>
+        <section className='relative bg-black pb-32 lg:min-h-screen'>
           <StaticImage src="../images/skills-bg.png" className='absolute h-full w-full left-0 top-0 object-cover object-center opacity-[0.1] pointer-events-none' alt="A kitten" />
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-x-16">
@@ -264,10 +264,10 @@ const SkillsSection = () => {
                     {
                       skillsIgnored.length > 0 && showHonourableMentionText ? (
                         <div className='animate animate-fade-up'>
-                          <h4 className='mt-20 text-white text-right font-semibold mb-2'>
+                          <h4 className='mt-20 text-white text-center lg:text-right font-semibold mb-2'>
                             Some honorable mentions that ChatGPT ignored in above masterpiece -
                           </h4>
-                          <div className="text-right">
+                          <div className="text-center lg:text-right">
                             {
                               skillsIgnored.map((skill, index) => (
                                 <p className='inline-block mr-1 text-base  lg:text-xl text-white font-bold leading-normal'>
