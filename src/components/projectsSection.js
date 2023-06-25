@@ -53,7 +53,7 @@ const ProjectsSection = () => {
         {
           projects.map((project,index) => {
             return (
-              <div className={`grid gap-4 ${ index != projects.length - 1? 'mb-20':''}`}> 
+              <div className={`grid gap-4 ${ index != projects.length - 1? 'mb-8 md:mb-12 lg:mb-20':''}`}> 
                 <ProjectCard project={project.frontmatter}></ProjectCard>
               </div>
             )

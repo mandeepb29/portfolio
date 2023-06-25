@@ -1,13 +1,10 @@
 import React from 'react'
-import BehanceIcon from '../../images/behance.svg';
-import GithubIcon from '../../images/github.svg';
-import LinkedinIcon from '../../images/linkedin.svg';
-import InstagramIcon from '../../images/instagram.svg';
+import SocialMediaPanel from "./socialMediaPanel";
 
 function Footer() {
     const currentYear = new Date().getFullYear();
   return (
-    <section className='bg-white p-0 z-[51] relative'>
+    <section className='bg-white p-0 z-[45] relative'> 
         <div className="flex flex-col lg:min-h-screen justify-between">
         <div className="container mt-16">
         <div className="text-center">
@@ -28,20 +25,7 @@ function Footer() {
             you can also find me on these platforms
         </p>
 
-        <div className="flex gap-16 justify-center opacity-80 mt-8">
-            <a href="https://www.linkedin.com/in/mandeepbaghel" target='_blank' className='w-12'>
-                <img src={LinkedinIcon} alt="linkedin" />
-            </a>
-            <a href="https://github.com/mandeepb29" className='w-12' target='_blank'>
-            <img src={GithubIcon} alt="github" />
-            </a>
-            <a href="https://www.instagram.com/mandeepbaghel/" className='w-12' target='_blank'>
-            <img src={InstagramIcon} alt="instagram" />
-            </a>
-            <a href="https://www.behance.net/mandeepbaghel" className='w-12' target='_blank'>
-            <img src={BehanceIcon} alt="behance" />
-            </a>
-        </div>
+        <SocialMediaPanel />
 
         <div className="border-t border-lightgray py-6 mt-8">
             <p className="text-darkgrey font-medium text-center text-md">

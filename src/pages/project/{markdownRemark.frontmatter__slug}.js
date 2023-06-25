@@ -116,14 +116,14 @@ export default function ProjectTemplate({
       <div className='py-6' style={gradientStyle}>
         <section>
           <div className="container">
-            <h1 style={{ color: frontmatter.color }} className='text-7xl tracking-tighter mt-32'>{frontmatter.title}</h1>
-            <p className="text-darkgrey font-bold text-xl mt-4 max-w-4xl">
+            <h1 style={{ color: frontmatter.color }} className='text-6xl lg:text-7xl tracking-tighter mt-32'>{frontmatter.title}</h1>
+            <p className="text-darkgrey font-bold text-lg lg:text-xl mt-4 max-w-4xl">
               {frontmatter.desc}
             </p>
           </div>
         </section>
         <div className={`${styles.contentGlassDiv} mt-8`}>
-          <section className='pt-8 min-h-screen'>
+          <section className='pt-4 px-2 lg:pt-8 min-h-screen'>
             <div className="container">
               <p className="text-darkgrey font-medium mb-4">
                 made using
@@ -131,7 +131,7 @@ export default function ProjectTemplate({
 
               <div>
                 {frontmatter?.technologies?.map(item => (
-                  <div className="inline-flex gap-2 mr-4 mb-4 items-center shadow-sm px-6 py-2 rounded-full bg-white">
+                  <div className="inline-flex gap-2 mr-4 mb-4 items-center shadow-sm px-4 lg:px-6 py-2 rounded-full bg-white">
                     <GatsbyImage class='w-6 h-auto object-contain' image={getImage(item?.image?.childImageSharp?.gatsbyImageData)} alt={item.name} />
                     <p className='text-sm text-dark font-bold'>{item.name}</p>
                   </div>

@@ -1,7 +1,6 @@
 .content-glass-div{
-    @apply border-t border-b border-2 border-white pt-4;
+    @apply border-t border-b border-2 border-white pt-4 rounded-[4rem] lg:rounded-[12rem];
     border: 2px solid hsl(0, 0%, 100%);
-    border-radius: 12rem;
     backdrop-filter: blur(4px);
     background:linear-gradient(to bottom, rgba(255, 255, 255, 0.308) 2%,rgba(255, 255, 255, 0.81) 10%, #FFFFFF  80%, rgba(255, 255, 255, 0.81));
 }
