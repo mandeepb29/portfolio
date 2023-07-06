@@ -43,7 +43,7 @@ const ProjectsSection = () => {
   //console.log("projects -- ",projects);
 
   return (
-    <section>
+    <section id='work'>
       <div className="container">
       <div className="text-center">
         <h2 className="section-heading">

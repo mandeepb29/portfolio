@@ -1,23 +1,25 @@
-// Step 1: Import React
-import * as React from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 import Layout from '../components/common/layout';
 import HeaderSection from '../components/headerSection';
 import ProjectsSection from '../components/projectsSection';
 import SkillsSection from '../components/skillsSection';
 import TestimonialSection from '../components/testimonialSection';
 import AboutSection from '../components/aboutSection';
+import { useInView, InView } from 'react-intersection-observer';
 
 // Step 2: Define your component
 const IndexPage = () => {
+  
+
   return (
     <main>
       <Layout>
-        <HeaderSection />
-        <ProjectsSection />
-        <SkillsSection></SkillsSection>
-        <TestimonialSection></TestimonialSection>
-        <AboutSection></AboutSection>
-      </Layout>      
+      <HeaderSection />
+      <ProjectsSection />
+      <SkillsSection />
+      <TestimonialSection />
+      <AboutSection />
+      </Layout>
     </main>
   )
 

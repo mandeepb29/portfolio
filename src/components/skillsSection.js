@@ -22,7 +22,7 @@ const SkillsSection = () => {
 
   //var typedObj = null;
 
-  console.log("CALLING RENDER - ", process.env.GATSBY_API_SECRET_KEY);
+  //console.log("CALLING RENDER - ", process.env.GATSBY_API_SECRET_KEY);
   const data = useStaticQuery(
     graphql`
         query {

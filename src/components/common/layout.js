@@ -2,7 +2,6 @@ import * as React from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 const Layout = ({ pageTitle, children,showWhiteHeader=false }) => {
-  console.log("Layout--------",pageTitle,children);
   return (
     <div className={showWhiteHeader ? "bg-light-gr" : "bg-dark"}>
         <Navbar isWhite={showWhiteHeader}></Navbar>

@@ -40,7 +40,6 @@ export default function ProjectTemplate({
     return { lighterShade, nearWhiteShade }
   }
 
-  
   function rgbToHsl(r, g, b) {
     r /= 255;
     g /= 255;
@@ -123,13 +122,14 @@ export default function ProjectTemplate({
           </div>
         </section>
         <div className={`${styles.contentGlassDiv} mt-8`}>
-          <section className='pt-4 px-2 lg:pt-8 min-h-screen'>
+          <section className='pt-4 lg:pt-8 min-h-screen'>
             <div className="container">
+             
+
+              <div className='px-2 lg:px-0'>
               <p className="text-darkgrey font-medium mb-4">
                 made using
               </p>
-
-              <div>
                 {frontmatter?.technologies?.map(item => (
                   <div className="inline-flex gap-2 mr-4 mb-4 items-center shadow-sm px-4 lg:px-6 py-2 rounded-full bg-white">
                     <GatsbyImage class='w-6 h-auto object-contain' image={getImage(item?.image?.childImageSharp?.gatsbyImageData)} alt={item.name} />
@@ -146,12 +146,12 @@ export default function ProjectTemplate({
           </section>
         </div>
         <div className="container">
-          <Link className="py-16 block" to={`/project/` + nextProject?.slug}>
+          <Link className="py-4 pt-8 lg:py-16 block" to={`/project/` + nextProject?.slug}>
             <p className="group inline-flex gap-2 items-center text-gr-link">
               <span className="font-bold text-darkgrey text-lg">Next Project</span>
-              <img src={RightIcon} className='transition-all ease-out-cubic w-12 group-hover:translate-x-2 group-hover:opacity-[.25]' alt="Visit Project" />
+              <img src={RightIcon} className='transition-all ease-out-cubic w-8 lg:w-12 group-hover:translate-x-2 group-hover:opacity-[.25]' alt="Visit Project" />
             </p>
-            <h1 className="text-end mt-8" style={{ color: nextProject?.color }}>
+            <h1 className="lg:text-end mt-4 lg:mt-8" style={{ color: nextProject?.color }}>
               {
                 nextProject?.title
               }
