@@ -8,7 +8,7 @@ import MovieVector from '../images/movie-vector.svg';
 
 function AboutSection() {
   return (
-    <div className='bg-black'>
+    <div className='bg-black' id='about'>
         <div className="grid grid-cols-none md:grid-cols-5 lg:grid-cols-3">
                 <div className="grid md:col-span-3 lg:col-span-2">
                     <section>

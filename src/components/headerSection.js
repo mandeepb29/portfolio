@@ -7,7 +7,7 @@ import OneWaterLogo from "../images/companies/onewater.png";
 
 const HeaderSection = () => {
   return (
-    <section className='pt-36 lg:pt-60'>
+    <section className='pt-36 lg:pt-60' id='home'>
         <div className="container">
         <div class="w-max-3xl lg:w-max-5xl">
         <div className='border-b border-bordergrey'>

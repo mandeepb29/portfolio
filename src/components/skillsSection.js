@@ -232,7 +232,7 @@ const SkillsSection = () => {
   return (
     <div>
       <InView as="div" onChange={handleSectionVisibility} threshold={0.5}>
-        <section className='relative bg-black pb-32 lg:min-h-screen'>
+        <section className='relative bg-black pb-32 lg:min-h-screen' id='skills'>
           <StaticImage src="../images/skills-bg.png" className='absolute h-full w-full left-0 top-0 object-cover object-center opacity-[0.1] pointer-events-none' alt="A kitten" />
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-x-16">

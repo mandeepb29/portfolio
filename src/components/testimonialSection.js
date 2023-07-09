@@ -39,7 +39,7 @@ function TestimonialSection() {
   const testimonialsData = data.allMarkdownRemark.nodes[0].frontmatter.list;
 
   return (
-    <section className='testimonial-section bg-light-gr'>
+    <section className='testimonial-section bg-light-gr' id='testimonial'>
       <div className="container">
         <h2 className='section-heading section-heading-dark'>
           testimonials
