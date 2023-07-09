@@ -6,13 +6,30 @@ import SkillsSection from '../components/skillsSection';
 import TestimonialSection from '../components/testimonialSection';
 import AboutSection from '../components/aboutSection';
 import { useInView, InView } from 'react-intersection-observer';
+import { Link , scroller } from 'react-scroll'
 
 // Step 2: Define your component
 const IndexPage = () => {
-  
+  // useEffect(() => {
+  //   const handleScrollToSection = () => {
+  //     const { state } = window.history;
+  //     if (state && state.scrollTo) {
+  //       scroller.scrollTo(state.scrollTo, {
+  //         duration: 500,
+  //         smooth: "easeInOutQuint",
+  //         offset: -50,
+  //       });
+  //     }
+  //   };
+
+  //   window.addEventListener("load", handleScrollToSection);
+  //   return () => {
+  //     window.removeEventListener("load", handleScrollToSection);
+  //   };
+  // }, []);
 
   return (
-    <main>
+    <main id='websiteContainer'>
       <Layout>
       <HeaderSection />
       <ProjectsSection />
