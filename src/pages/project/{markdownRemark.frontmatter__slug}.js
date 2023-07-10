@@ -14,11 +14,11 @@ export default function ProjectTemplate({
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   const AllProjects = data.allMarkdownRemark.nodes;
- console.log("all projects" , AllProjects);
- console.log("frontmatter" , frontmatter);
+  console.log("all projects", AllProjects);
+  console.log("frontmatter", frontmatter);
 
   const currentIndex = AllProjects.findIndex(el => el.frontmatter.slug == frontmatter.slug);
-  console.log("current index" , currentIndex);
+  console.log("current index", currentIndex);
   const nextIndex = (currentIndex + 1) % AllProjects.length;
   const nextProject = AllProjects[nextIndex].frontmatter;
   //console.log("next index - ", currentIndex, nextIndex);
@@ -124,12 +124,12 @@ export default function ProjectTemplate({
         <div className={`${styles.contentGlassDiv} mt-8`}>
           <section className='pt-4 lg:pt-8 min-h-screen'>
             <div className="container">
-             
+
 
               <div className='px-2 lg:px-0'>
-              <p className="text-darkgrey font-medium mb-4">
-                made using
-              </p>
+                <p className="text-darkgrey font-medium mb-4">
+                  made using
+                </p>
                 {frontmatter?.technologies?.map(item => (
                   <div className="inline-flex gap-2 mr-4 mb-4 items-center shadow-sm px-4 lg:px-6 py-2 rounded-full bg-white">
                     <GatsbyImage class='w-6 h-auto object-contain' image={getImage(item?.image?.childImageSharp?.gatsbyImageData)} alt={item.name} />
@@ -161,13 +161,12 @@ export default function ProjectTemplate({
 
       </div>
     </Layout>
-
   )
 }
 
 export const pageQuery = graphql`
   query($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    markdownRemark(id: { eq: $id },fileAbsolutePath: { regex: "/src/content/projects/" }) {
       html
       frontmatter {
         slug
