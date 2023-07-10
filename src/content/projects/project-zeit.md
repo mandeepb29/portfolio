@@ -1,5 +1,5 @@
 ---
-slug: zeit
+id: zeit
 title: Zeit Labs
 image: ../../images/projects/zeit.png
 color: '#FFC325'
@@ -15,7 +15,6 @@ technologies:
     image: ../../images/logos/sass.png
   - name: JavaScript
     image: ../../images/logos/js.png
-
 ---
 # Requirements
 

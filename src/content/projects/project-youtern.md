@@ -1,5 +1,5 @@
 ---
-slug: youtern
+id: youtern
 title: Youtern
 image: ../../images/projects/youtern.png
 color: '#2fc64d'

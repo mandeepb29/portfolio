@@ -17,7 +17,7 @@ function ProjectCard({project}) {
                 <p className={styles.description}>
                   {project?.desc}
                 </p>
-                <Link className="btn btn-primary -mt-1 lg:mt-6 inline-flex" to={`project/${project?.slug}`}>
+                <Link className="btn btn-primary -mt-1 lg:mt-6 inline-flex" to={`project/${project?.id}`}>
                   <span>
                   see more details
                   </span>

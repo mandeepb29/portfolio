@@ -1,23 +1,29 @@
 import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
-import Layout from '../../components/common/layout';
-import * as styles from "./{markdownRemark.frontmatter__slug}.module.css";
+import Layout from '../components/common/layout';
+import * as styles from "./ProjectTemplate.module.css";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import RightIcon from "../../images/right-arrow.png"
+import RightIcon from "../images/right-arrow.png"
 import { Link } from "gatsby"
+import NotFoundPage from '../pages/404';
 
 export default function ProjectTemplate({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  //console.log("project data ---- ", data);
+  console.log("project data ---- ", data);
   const { markdownRemark } = data // data.markdownRemark holds your post data
+  
+  if(!markdownRemark) {
+    return <NotFoundPage />
+  }
+
   const { frontmatter, html } = markdownRemark
   const AllProjects = data.allMarkdownRemark.nodes;
   console.log("all projects", AllProjects);
   console.log("frontmatter", frontmatter);
 
-  const currentIndex = AllProjects.findIndex(el => el.frontmatter.slug == frontmatter.slug);
+  const currentIndex = AllProjects.findIndex(el => el.frontmatter.id == frontmatter.id);
   console.log("current index", currentIndex);
   const nextIndex = (currentIndex + 1) % AllProjects.length;
   const nextProject = AllProjects[nextIndex].frontmatter;
@@ -146,7 +152,7 @@ export default function ProjectTemplate({
           </section>
         </div>
         <div className="container">
-          <Link className="py-4 pt-8 lg:py-16 block" to={`/project/` + nextProject?.slug}>
+          <Link className="py-4 pt-8 lg:py-16 block" to={`/project/` + nextProject?.id}>
             <p className="group inline-flex gap-2 items-center text-gr-link">
               <span className="font-bold text-darkgrey text-lg">Next Project</span>
               <img src={RightIcon} className='transition-all ease-out-cubic w-8 lg:w-12 group-hover:translate-x-2 group-hover:opacity-[.25]' alt="Visit Project" />
@@ -166,10 +172,10 @@ export default function ProjectTemplate({
 
 export const pageQuery = graphql`
   query($id: String!) {
-    markdownRemark(id: { eq: $id },fileAbsolutePath: { regex: "/src/content/projects/" }) {
+    markdownRemark(frontmatter : {id: { eq: $id }}) {
       html
       frontmatter {
-        slug
+        id
         title
         color
         desc
@@ -191,7 +197,7 @@ export const pageQuery = graphql`
         frontmatter {
           title
           color
-          slug
+          id
         }
       }
     }
