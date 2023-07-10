@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
-import OwlCarousel from 'react-owl-carousel';
+// import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import quoteUpImg from '../images/quote-up.png';
@@ -10,6 +10,19 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 function TestimonialSection() {
   const cardColorsClasses = ['bg-[#FFE5C7]', 'bg-[#F5FFCB]', 'bg-[#E3D2FF]']
   const textColorsClasses = ['text-orange', 'text-green', 'text-purple']
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('owl.carousel').then(() => {
+        window.jQuery('.owl-carousel').owlCarousel();
+      });
+    }
+  }, []);
+
+
+  if(typeof window == 'undefined'){
+    return <div></div>
+  }
 
   const data = useStaticQuery(
     graphql`
@@ -73,9 +86,9 @@ function TestimonialSection() {
               <div className='item'>
                 <div className={`relative overflow-hidden px-8 md:px-12 pt-8 md:pt-16 pb-6 md:pb-8 
                 rounded-tr-[3.25rem] rounded-tl-[2.375rem] rounded-br-[2.375rem] rounded-bl-[3.25rem]
-                md:rounded-tr-[6.25rem] md:rounded-tl-[4.375rem] md:rounded-br-[4.375rem] md:rounded-bl-[6.25rem] ${cardColorsClasses[index % (testimonialsData.length - 1)]} ${index % 2 != 0 ? 'lg:-translate-y-16' : ''}`}>
-
-
+                md:rounded-tr-[6.25rem] md:rounded-tl-[4.375rem] md:rounded-br-[4.375rem] md:rounded-bl-[6.25rem] 
+                ${cardColorsClasses[index % (testimonialsData.length - 1)]} 
+                ${index % 2 != 0 ? 'lg:-translate-y-16' : ''}`}>
                   <img src={quoteUpImg} alt="quote up" className='absolute left-0 top-4 !w-24' />
                   <img src={quoteDownImg} alt="quote down" className='absolute right-0 bottom-4 !w-36' />
                   <div>
@@ -104,7 +117,6 @@ function TestimonialSection() {
             )
           }
           )}
-
       </OwlCarousel>;
     </section>
   )

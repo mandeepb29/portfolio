@@ -10,23 +10,6 @@ import { Link , scroller } from 'react-scroll'
 
 // Step 2: Define your component
 const IndexPage = () => {
-  // useEffect(() => {
-  //   const handleScrollToSection = () => {
-  //     const { state } = window.history;
-  //     if (state && state.scrollTo) {
-  //       scroller.scrollTo(state.scrollTo, {
-  //         duration: 500,
-  //         smooth: "easeInOutQuint",
-  //         offset: -50,
-  //       });
-  //     }
-  //   };
-
-  //   window.addEventListener("load", handleScrollToSection);
-  //   return () => {
-  //     window.removeEventListener("load", handleScrollToSection);
-  //   };
-  // }, []);
 
   return (
     <main id='websiteContainer'>
