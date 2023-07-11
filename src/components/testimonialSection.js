@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
-// import OwlCarousel from 'react-owl-carousel';
+import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import quoteUpImg from '../images/quote-up.png';
@@ -18,11 +18,6 @@ function TestimonialSection() {
       });
     }
   }, []);
-
-
-  if(typeof window == 'undefined'){
-    return <div></div>
-  }
 
   const data = useStaticQuery(
     graphql`
@@ -50,6 +45,12 @@ function TestimonialSection() {
         }
     `);
   const testimonialsData = data.allMarkdownRemark.nodes[0].frontmatter.list;
+
+  if(typeof window == 'undefined'){
+    return <div></div>
+  }
+
+ 
 
   return (
     <section className='testimonial-section bg-light-gr' id='testimonial'>

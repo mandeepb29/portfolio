@@ -59,18 +59,19 @@ const Navbar = ({ isWhite }) => {
         duration: scrollDuration,
         smooth: scrollEasingFunction,
         //spy: true, // Activate scroll spy
-        //spyThrottle: 500, // Throttle scroll spy events (milliseconds)
-        offset: offset, // Offset for scroll position (pixels)
-        //hashSpy: true, // Scroll to element with matching hash in URL,
+        spyThrottle: 500, // Throttle scroll spy events (milliseconds)
+        offset: window.innerWidth < navMenuDesktopWidth ? offset - 20 : offset, // Offset for scroll position (pixels)
+        hashSpy: true, // Scroll to element with matching hash in URL,
         //delay: window.innerWidth < navMenuDesktopWidth ? 500:0
       };
-
       scroller.scrollTo(id, scrollOptions);
     }
     else {
       // If on a different page, redirect to the homepage and scroll to the section after redirection
-      navigate(`/#${id}`);
-      console.log("redirect to - ",  window.location.href) 
+      localStorage.setItem("mPortfolio_HomePageSectionId",id);
+      localStorage.setItem("mPortfolio_HomePageSectionOffset",String(offset));
+      //console.log("in other page", localStorage);
+      navigate(`/`);
     }
 }
 
@@ -93,9 +94,7 @@ return (
             {
               links.map(link =>
                 <li>
-                  <Link className={linkStyle} to={link.id} onClick={() => scrollToSection(link.id, link.offset)}
-
-                    offset={link.offset}>
+                  <Link className={linkStyle} to={link.id} onClick={() => scrollToSection(link.id, link.offset)} offset={link.offset} hashSpy={true} spyThrottle={500}>
                     {link.name}
                   </Link>
                 </li>

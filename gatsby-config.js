@@ -31,31 +31,17 @@ module.exports = {
    `gatsby-plugin-sharp`,
    `gatsby-transformer-sharp`,
    `gatsby-plugin-image`,
+    //"gatsby-plugin-sass",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "src/projects",
-        path: `${__dirname}/src/content/projects`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "src/skills",
-        path: `${__dirname}/src/content/skills`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "src/testimonials",
-        path: `${__dirname}/src/content/testimonials`,
+        name: "src",
+        path: `${__dirname}/src/content`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name:"images",
         path: `${__dirname}/src/images`,
       },
     },

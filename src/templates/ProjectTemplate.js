@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import Layout from '../components/common/layout';
 import * as styles from "./ProjectTemplate.module.css";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import RightIcon from "../images/right-arrow.png"
 import { Link } from "gatsby"
 import NotFoundPage from '../pages/404';
@@ -13,10 +12,6 @@ export default function ProjectTemplate({
 }) {
   console.log("project data ---- ", data);
   const { markdownRemark } = data // data.markdownRemark holds your post data
-  
-  if(!markdownRemark) {
-    return <NotFoundPage />
-  }
 
   const { frontmatter, html } = markdownRemark
   const AllProjects = data.allMarkdownRemark.nodes;
