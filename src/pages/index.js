@@ -19,7 +19,7 @@ const IndexPage = () => {
     let sectionId = localStorage.getItem("mPortfolio_HomePageSectionId");
     let offset = parseInt(localStorage.getItem("mPortfolio_HomePageSectionOffset"));
     if(sectionId){
-      console.log("scroll to section")
+      
       let scrollOptions = {
         duration: scrollDuration,
         smooth: scrollEasingFunction,
@@ -32,7 +32,7 @@ const IndexPage = () => {
   },[]);
 
   return (
-    <main id='websiteContainer'>
+    <main>
       <Layout>
       <HeaderSection />
       <ProjectsSection />
