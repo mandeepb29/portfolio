@@ -3,8 +3,6 @@ import { StaticImage } from "gatsby-plugin-image"
 import { useStaticQuery, graphql } from 'gatsby';
 import * as styles from "./skillsSection.module.css";
 import { InView } from 'react-intersection-observer';
-import { TypeAnimation } from 'react-type-animation';
-import ReactTypingEffect from 'react-typing-effect';
 import { Code } from 'react-content-loader'
 import Typed from "typed.js";
 
@@ -19,7 +17,6 @@ const SkillsSection = () => {
   const [response, setResponse] = useState(null);
   const [sectionIsVisible, setSectionIsVisible] = useState(false);
   const [disableGenerateButton, setDisableGenerateButton] = useState(true);
-
   //var typedObj = null;
 
   //console.log("CALLING RENDER - ", process.env.GATSBY_API_SECRET_KEY);
@@ -69,14 +66,14 @@ const SkillsSection = () => {
   }, []); // empty dependency array to run the effect only once
 
   useEffect(() => {
-    console.log("useEffect response - ",response);
+    //console.log("useEffect response - ",response);
     if(response && sectionIsVisible){
       handleSectionVisibility(true);
     }
   }, [response]); // empty dependency array to run the effect only once
 
   useEffect(() => {
-    console.log("useEffect poemText - ",poemText);
+    //console.log("useEffect poemText - ",poemText);
     if(poemText && poemText != "initiated"){
       //if(typed.current == null){
         typed.current = null;
@@ -195,17 +192,20 @@ const SkillsSection = () => {
   }
 
   async function handleSectionVisibility(isVisible) {
-    if (isVisible) {
-      setSectionIsVisible(true);
-      console.log("Section is now visible!");
-      if (response && poemText == "initiated") {
-        console.log("Got the resonse - ", response);
-        setPoemText(response);
+    if(typeof window !== 'undefined'){
+      if (isVisible) {
+        setSectionIsVisible(true);
+        console.log("Section is now visible!");
+        if (response && poemText == "initiated") {
+          console.log("Got the resonse - ", response);
+          setPoemText(response);
+        }
+      } else {
+        setSectionIsVisible(false);
+        console.log("Section is no longer visible!");
       }
-    } else {
-      setSectionIsVisible(false);
-      console.log("Section is no longer visible!");
     }
+    
   }
 
  async function regeneratePoem() {
@@ -233,7 +233,10 @@ const SkillsSection = () => {
     <div>
       <InView as="div" onChange={handleSectionVisibility} threshold={0.5}>
         <section className='relative bg-black pb-32 lg:min-h-screen' id='skills'>
-          <StaticImage src="../images/skills-bg.png" className='absolute h-full w-full left-0 top-0 object-cover object-center opacity-[0.1] pointer-events-none' alt="A kitten" />
+          <div className='absolute h-full w-full left-0 top-0'>
+          <StaticImage src="../images/skills-bg.png" className='h-full w-full object-cover object-center opacity-[0.1] pointer-events-none' alt="A kitten" />
+          </div>
+          
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-x-16">
               <div className="col">

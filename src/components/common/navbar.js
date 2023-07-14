@@ -16,12 +16,10 @@ const Navbar = ({ isWhite }) => {
   const navMenuDesktopWidth = 1280;
 
   useEffect(() => {
-
     if (typeof window !== 'undefined') {
     const hamburger = document.getElementById('hamburgerBtn');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.navLink');
-
     const toggleMenu = () => {
       navMenu.classList.toggle('active');
       hamburger.classList.toggle('active');
@@ -46,7 +44,6 @@ const Navbar = ({ isWhite }) => {
   }
   }, []);
 
-
   const links = [
     { name: "work", id: "work", offset: -40 },
     { name: "skills", id: "skills", offset: -30 },
@@ -56,8 +53,7 @@ const Navbar = ({ isWhite }) => {
   ]
 
   const scrollToSection = (id, offset) => {
-    if (typeof window !== 'undefined') {
-    const currentPath =  window.location.pathname;
+    const currentPath = typeof window !== 'undefined'? window.location.pathname : "";
     if (currentPath === "/") {
       // If on the homepage, scroll to the section directly
       let scrollOptions = {
@@ -67,16 +63,15 @@ const Navbar = ({ isWhite }) => {
         offset: window.innerWidth < navMenuDesktopWidth ? offset - 20 : offset, // Offset for scroll position (pixels)
         hashSpy: true, // Scroll to element with matching hash in URL,
       };
-      scroller.scrollTo(id, scrollOptions);
+      if(typeof window !== 'undefined') scroller.scrollTo(id, scrollOptions);
     }
-    else {
+    else if(typeof window !== 'undefined') {
       // If on a different page, redirect to the homepage and scroll to the section after redirection
       localStorage.setItem("mPortfolio_HomePageSectionId",id);
       localStorage.setItem("mPortfolio_HomePageSectionOffset",String(offset));
       //console.log("in other page", localStorage);
       navigate(`/`);
     }
-  }
 }
 
 return (
