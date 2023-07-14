@@ -7,7 +7,7 @@ require("dotenv").config({
 })
 
 module.exports = {
-  pathPrefix: "/portfoio",
+  pathPrefix: "/portfolio",
   siteMetadata: {
     title: `my-portfolio`,
     siteUrl: `https://www.yourdomain.tld`
