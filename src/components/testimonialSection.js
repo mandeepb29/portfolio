@@ -39,7 +39,6 @@ function TestimonialSection() {
         </h2>
         </div>
         <TestimonialCarousel carouselData={testimonialsData} />
-      
     </section>
   )
 

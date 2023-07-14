@@ -10,16 +10,14 @@ import { scroller } from 'react-scroll'
 
 // Step 2: Define your component
 const IndexPage = () => {
-  
-  
   useEffect(()=>{
+    if (typeof window !== 'undefined') {
     const scrollEasingFunction = "easeInOutCubic";
     const scrollDuration = 750;
     console.log("enter homepage");
     let sectionId = localStorage.getItem("mPortfolio_HomePageSectionId");
     let offset = parseInt(localStorage.getItem("mPortfolio_HomePageSectionOffset"));
     if(sectionId){
-      
       let scrollOptions = {
         duration: scrollDuration,
         smooth: scrollEasingFunction,
@@ -29,6 +27,7 @@ const IndexPage = () => {
       localStorage.removeItem("mPortfolio_HomePageSectionId");
       localStorage.removeItem("mPortfolio_HomePageSectionOffset");
     };
+  }
   },[]);
 
   return (
@@ -42,7 +41,6 @@ const IndexPage = () => {
       </Layout>
     </main>
   )
-
 }
 
 // You'll learn about this in the next task, just copy it for now

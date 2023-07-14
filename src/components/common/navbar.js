@@ -16,6 +16,8 @@ const Navbar = ({ isWhite }) => {
   const navMenuDesktopWidth = 1280;
 
   useEffect(() => {
+
+    if (typeof window !== 'undefined') {
     const hamburger = document.getElementById('hamburgerBtn');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.navLink');
@@ -29,6 +31,7 @@ const Navbar = ({ isWhite }) => {
       const scrollHeight = window.scrollY;
       setIsScrolled(scrollHeight > threshold);
     };
+    
 
     window.addEventListener('scroll', handleScroll);
     hamburger.addEventListener('click', toggleMenu);
@@ -40,6 +43,7 @@ const Navbar = ({ isWhite }) => {
       window.removeEventListener('scroll', handleScroll);
       hamburger.removeEventListener('click', toggleMenu);
     };
+  }
   }, []);
 
 
@@ -52,17 +56,16 @@ const Navbar = ({ isWhite }) => {
   ]
 
   const scrollToSection = (id, offset) => {
-    const currentPath = typeof window !== "undefined" ? window.location.pathname : "";
+    if (typeof window !== 'undefined') {
+    const currentPath =  window.location.pathname;
     if (currentPath === "/") {
       // If on the homepage, scroll to the section directly
       let scrollOptions = {
         duration: scrollDuration,
         smooth: scrollEasingFunction,
-        //spy: true, // Activate scroll spy
         spyThrottle: 500, // Throttle scroll spy events (milliseconds)
         offset: window.innerWidth < navMenuDesktopWidth ? offset - 20 : offset, // Offset for scroll position (pixels)
         hashSpy: true, // Scroll to element with matching hash in URL,
-        //delay: window.innerWidth < navMenuDesktopWidth ? 500:0
       };
       scroller.scrollTo(id, scrollOptions);
     }
@@ -73,6 +76,7 @@ const Navbar = ({ isWhite }) => {
       //console.log("in other page", localStorage);
       navigate(`/`);
     }
+  }
 }
 
 return (
