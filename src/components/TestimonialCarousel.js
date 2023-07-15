@@ -22,7 +22,11 @@ function TestimonialCarousel({carouselData}) {
 
       if (!OwlCarousel || isLoading) {
         // Render a placeholder or loading state if OwlCarousel is not loaded yet
-        return <div>Loading...</div>;
+        return <div className='h-[420px] md:h-[600px] lg:h-[500px]'>
+          <div className="container">
+          Loading...
+          </div>
+          </div>;
       }
 
   return (

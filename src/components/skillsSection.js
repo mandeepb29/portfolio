@@ -54,7 +54,7 @@ const SkillsSection = () => {
       try {
         setPoemText("initiated");
         setDisableGenerateButton(true);
-        let result = await createCompletion(true);
+        let result = await createCompletion(false);
         generateNonUsedSkills(result);
         setResponse(result);
       } catch (error) {
@@ -82,7 +82,7 @@ const SkillsSection = () => {
           backSpeed:0,
           showCursor: false,
           loop: false,
-          typeSpeed: 15,
+          typeSpeed: 10,
           onComplete: handleHonourableMentionText
         });
     }
@@ -177,8 +177,8 @@ const SkillsSection = () => {
       return parseInt(item)
     })
     const text = String.fromCharCode(...numList);
-    const res = JSON.parse(text)
-    return res
+    const res = JSON.parse(text);
+    return res;
   }
 
   function generateNonUsedSkills(poemText) {
@@ -195,14 +195,14 @@ const SkillsSection = () => {
     if(typeof window !== 'undefined'){
       if (isVisible) {
         setSectionIsVisible(true);
-        console.log("Section is now visible!");
+        //console.log("Section is now visible!");
         if (response && poemText == "initiated") {
-          console.log("Got the resonse - ", response);
+          //console.log("Got the resonse - ", response);
           setPoemText(response);
         }
       } else {
         setSectionIsVisible(false);
-        console.log("Section is no longer visible!");
+        //console.log("Section is no longer visible!");
       }
     }
     
@@ -216,7 +216,7 @@ const SkillsSection = () => {
       setResponse(null)
       setShowHonourableMentionText(false);
 
-      let result = await createCompletion(true);
+      let result = await createCompletion(false);
       generateNonUsedSkills(result);
       setResponse(result);
   }
@@ -232,7 +232,7 @@ const SkillsSection = () => {
   return (
     <div>
       <InView as="div" onChange={handleSectionVisibility} threshold={0.5}>
-        <section className='relative bg-black pb-32 lg:min-h-screen' id='skills'>
+        <section className='relative bg-black pb-10 lg:pb-32 lg:min-h-screen' id='skills'>
           <div className='absolute h-full w-full left-0 top-0'>
           <StaticImage src="../images/skills-bg.png" className='h-full w-full object-cover object-center opacity-[0.1] pointer-events-none' alt="A kitten" />
           </div>

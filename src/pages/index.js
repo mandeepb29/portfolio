@@ -1,37 +1,45 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import Layout from '../components/common/layout';
 import HeaderSection from '../components/headerSection';
 import ProjectsSection from '../components/projectsSection';
 import SkillsSection from '../components/skillsSection';
 import TestimonialSection from '../components/testimonialSection';
 import AboutSection from '../components/aboutSection';
-import { useInView, InView } from 'react-intersection-observer';
 import { scroller } from 'react-scroll'
+
+const navMenuDesktopWidth = 1280;
 
 // Step 2: Define your component
 const IndexPage = () => {
   useEffect(()=>{
-    if (typeof window !== 'undefined') {
-    const scrollEasingFunction = "easeInOutCubic";
-    const scrollDuration = 750;
+   
     console.log("enter homepage");
-    let sectionId = localStorage.getItem("mPortfolio_HomePageSectionId");
-    let offset = parseInt(localStorage.getItem("mPortfolio_HomePageSectionOffset"));
+
+    //if(typeof localStorage !== 'undefined'){
+      const scrollEasingFunction = "easeInOutCubic";
+      const scrollDuration = 750;
+      let sectionId = localStorage.getItem("mPortfolio_HomePageSectionId");
+      let offset = parseInt(localStorage.getItem("mPortfolio_HomePageSectionOffset"));
+    //}
+    
     if(sectionId){
       let scrollOptions = {
         duration: scrollDuration,
         smooth: scrollEasingFunction,
-        offset: offset
+        //spyThrottle: 500, // Throttle scroll spy events (milliseconds)
+        offset: window.innerWidth < navMenuDesktopWidth ? offset - 20 : offset, // Offset for scroll position (pixels)
+        //hashSpy: true, // Scroll to element with matching hash in URL,
       };
+      console.log("scroll to section - ",sectionId,  scrollOptions)
       scroller.scrollTo(sectionId, scrollOptions);
       localStorage.removeItem("mPortfolio_HomePageSectionId");
       localStorage.removeItem("mPortfolio_HomePageSectionOffset");
     };
-  }
+  
   },[]);
 
   return (
-    <main>
+    <main id='mainWrapper'>
       <Layout>
       <HeaderSection />
       <ProjectsSection />
