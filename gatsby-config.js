@@ -62,5 +62,8 @@ module.exports = {
         ],
       },
     },
-  ]
+  ],
+  env: {
+    API_SECRET_KEY: process.env.API_SECRET_KEY,
+  },
 };
