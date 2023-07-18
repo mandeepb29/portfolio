@@ -1,36 +1,30 @@
-name: Gatsby Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: master
-
-env:
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    branches:
+      - master # Change this to your main branch name
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: GitHub Config
-        run: |
-          git config --global user.email "mandeepb29@gmail.com"
-          git config --global user.name "mandeepb29"
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 14
-      - name: Install dependencies
+
+      - name: Build and deploy
         run: |
-          npm install
-      - name: Build Gatsby site
-        run: npm run build
-      - name: Set environment variables
-        run: |
-          echo "API_SECRET_KEY=$API_SECRET_KEY" >> $GITHUB_ENV
+          npm ci
+          npm run build
+
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: public
+          github_token: ${{ secrets.API_SECRET_KEY }}
+          publish_dir: ./public
