@@ -7,7 +7,6 @@ on:
 
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
-  API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
 
 jobs:
   build:
@@ -32,4 +31,6 @@ jobs:
 
       - name: Build and Deploy Gatsby app
         run: npm run deploy:ci
+        env:
+          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
           
