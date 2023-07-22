@@ -5,11 +5,20 @@ on:
     branches:
       - master  # Change this to your main branch name
 
+env:
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: GitHub Config
+        run: |
+          git config --global user.email "mandeepb29@gmail.com"
+          git config --global user.name "mandeepb29"
+          
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -23,5 +32,4 @@ jobs:
 
       - name: Build and Deploy Gatsby app
         run: npm run deploy:ci
-        env:
-          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
+          
