@@ -21,11 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Gatsby app
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.API_SECRET_KEY }}
-          publish_dir: ./public
+      - name: Build and Deploy Gatsby app
+        run: npm run deploy:ci
+        env:
+          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
