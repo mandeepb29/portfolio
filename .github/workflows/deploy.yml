@@ -5,10 +5,6 @@ on:
     branches:
       - master  # Change this to your main branch name
 
-env:
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
-  API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,7 +27,9 @@ jobs:
         run: npm install
 
       - name: Build app
-        run: npm run build
+        run: |
+          API_SECRET_KEY=${{ secrets.API_SECRET_KEY }}
+          npm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
@@ -39,6 +37,5 @@ jobs:
           branch: gh-pages
           folder: public
           token: ${{ secrets.GITHUB_TOKEN }}
-          env: API_SECRET_KEY=${{ secrets.API_SECRET_KEY }}
 
           
