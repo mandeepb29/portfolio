@@ -3,31 +3,29 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master # Change this to your main branch name
+      - master  # Change this to your main branch name
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 18
+          node-version: '18.x'  # Change this to your desired Node.js version
 
-      - name: Build and deploy
-        run: |
-          npm ci
-          npm run build
+      - name: Install dependencies
+        run: npm install
 
-      - name: Set environment variables
-        run: |
-          echo "API_SECRET_KEY=$API_SECRET_KEY" >> $GITHUB_ENV
+      - name: Build Gatsby app
+        run: npm run build
+
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: public
+          deploy_key: ${{ secrets.API_SECRET_KEY }}
+          publish_dir: ./public

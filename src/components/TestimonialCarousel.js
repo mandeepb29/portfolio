@@ -4,8 +4,8 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import quoteUpImg from '../images/quote-up.png';
 import quoteDownImg from '../images/quote-down.png';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-let OwlCarousel;
 
+let OwlCarousel;
 function TestimonialCarousel({carouselData}) {
     const cardColorsClasses = ['bg-[#FFE5C7]', 'bg-[#F5FFCB]', 'bg-[#E3D2FF]']
     const textColorsClasses = ['text-orange', 'text-green', 'text-purple']

@@ -81,7 +81,7 @@ return (
     <div className="container">
       <nav className={`flex flex-row justify-between items-center transition-all ease-in duration-200 delay-300 py-3 xl:py-4 border-b border-b-gray ${isScrolled ? 'border-opacity-25' : 'border-opacity-0'}`}>
         <Link className='z-[49] cursor-pointer navLink' onClick={() => scrollToSection("home", 0)} offset={0}>
-          <img src={Logo} className={`h-8 lg:h-10 ${isWhite ? "invert" : ""}`} alt="Mandeep Logo" id='websiteLogo' />
+          <img src={Logo} className={`h-10 xl:h-12 ${isWhite ? "invert" : ""}`} alt="Mandeep Logo" id='websiteLogo' />
         </Link>
 
         <div className="z-[49] cursor-pointer py-1 px-3 w-16 h-12 flex flex-col xl:hidden items-center" id='hamburgerBtn'>
