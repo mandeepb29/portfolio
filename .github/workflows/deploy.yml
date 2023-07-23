@@ -33,14 +33,11 @@ jobs:
       - name: Build app
         run: npm run deploy
 
-      - name: Test API_SECRET_KEY
-        run: echo $API_SECRET_KEY
-
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
-          folder: public
+          folder: /
           token: ${{ secrets.GITHUB_TOKEN }}
 
           
