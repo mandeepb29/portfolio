@@ -27,9 +27,6 @@ jobs:
         run: |
           export GATSBYAPP_API_SECRET_KEY=${{ secrets.API_SECRET_KEY }}
 
-      - name: Debug GATSBYAPP_API_SECRET_KEY
-        run: echo "GATSBYAPP_API_SECRET_KEY value: ${{ secrets.API_SECRET_KEY }}"
-
       - name: Install dependencies
         run: npm install
 
