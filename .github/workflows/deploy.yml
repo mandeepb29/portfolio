@@ -22,14 +22,19 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18.x'  # Change this to your desired Node.js version
+      
+      - name: Set environment variable
+         env:
+          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
 
       - name: Install dependencies
         run: npm install
 
       - name: Build app
-        run: |
-          API_SECRET_KEY=${{ secrets.API_SECRET_KEY }}
-          npm run deploy
+        run: npm run deploy
+
+      - name: Test API_SECRET_KEY
+        run: echo $API_SECRET_KEY
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
