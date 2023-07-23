@@ -4,6 +4,7 @@ import "./navbar.css";
 import SocialMediaPanel from './socialMediaPanel';
 import { Link , scroller } from 'react-scroll'
 import { navigate } from "gatsby";
+import { withPrefix } from "gatsby"
 
 const Navbar = ({ isWhite }) => {
   const linkStyle = `
@@ -56,7 +57,7 @@ const Navbar = ({ isWhite }) => {
 
   const scrollToSection = (id, offset) => {
     const currentPath = typeof window !== 'undefined'? window.location.pathname : "";
-    if (currentPath === "/") {
+    if (currentPath === withPrefix("/")) {
       // If on the homepage, scroll to the section directly
       let scrollOptions = {
         duration: scrollDuration,
@@ -81,7 +82,7 @@ return (
     <div className="container">
       <nav className={`flex flex-row justify-between items-center transition-all ease-in duration-200 delay-300 py-3 xl:py-4 border-b border-b-gray ${isScrolled ? 'border-opacity-25' : 'border-opacity-0'}`}>
         <Link className='z-[49] cursor-pointer navLink' onClick={() => scrollToSection("home", 0)} offset={0}>
-          <img src={Logo} className={`h-10 xl:h-12 ${isWhite ? "invert" : ""}`} alt="Mandeep Logo" id='websiteLogo' />
+          <img src={Logo} className={`h-10 xl:h-12`} alt="Mandeep Logo" id='websiteLogo' />
         </Link>
 
         <div className="z-[49] cursor-pointer py-1 px-3 w-16 h-12 flex flex-col xl:hidden items-center" id='hamburgerBtn'>

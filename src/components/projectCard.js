@@ -7,6 +7,7 @@ function ProjectCard({project}) {
  let thumbnailImage = getImage(project?.image?.childImageSharp?.gatsbyImageData)
 
   return (
+    <a href={`project/${project?.id}`} target='_blank'>
     <div className={styles.projectCard} id="projectCard">
        <GatsbyImage image={thumbnailImage} className={styles.projectImg} />
         {/* <img src={project?.image} className={styles.projectImg} alt={project?.title} /> */}
@@ -17,7 +18,7 @@ function ProjectCard({project}) {
                 <p className={styles.description}>
                   {project?.desc}
                 </p>
-                <Link className="btn btn-primary -mt-1 lg:mt-6 inline-flex" to={`project/${project?.id}`}>
+                <Link className="btn btn-primary -mt-1 lg:mt-6 inline-flex">
                   <span>
                   see more details
                   </span>
@@ -36,6 +37,7 @@ function ProjectCard({project}) {
             ))}  
             </div>
     </div>
+    </a>
   )
   
 }

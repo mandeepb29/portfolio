@@ -49,5 +49,5 @@
     @apply blur-sm scale-100;
 }
 .project-card:hover .project-tool{
-    @apply opacity-100 translate-y-0 
+    @apply lg:opacity-100 lg:translate-y-0 
 }
