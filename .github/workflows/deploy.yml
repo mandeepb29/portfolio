@@ -25,7 +25,10 @@ jobs:
       
       - name: Set environment variable
         run: |
-          export API_SECRET_KEY=${{ secrets.API_SECRET_KEY }}
+          export GATSBYAPP_API_SECRET_KEY=${{ secrets.API_SECRET_KEY }}
+
+      - name: Debug GATSBYAPP_API_SECRET_KEY
+        run: echo "GATSBYAPP_API_SECRET_KEY value: ${{ secrets.API_SECRET_KEY }}"
 
       - name: Install dependencies
         run: npm install
@@ -37,7 +40,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
-          folder: /portfolio
+          folder: public
           token: ${{ secrets.GITHUB_TOKEN }}
 
           

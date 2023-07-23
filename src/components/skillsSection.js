@@ -11,7 +11,7 @@ const SkillsSection = () => {
   const skillsList = useRef([]);
   const el = useRef(null);
   const typed = useRef(null)
-  const apiSecretKey = process.env.API_SECRET_KEY;
+  const apiSecretKey = process.env.GATSBYAPP_API_SECRET_KEY;
   const [poemText, setPoemText] = useState(null);
   const [showHonourableMentionText, setShowHonourableMentionText] = useState(false);
   const [skillsIgnored, setSkillsIgnored] = useState([]);
@@ -21,7 +21,6 @@ const SkillsSection = () => {
   const ErrorMessage = "Unable to generate poem due to some error. Please try again sometime later.";
   //var typedObj = null;
 
-  //console.log("CALLING RENDER - ", process.env.GATSBY_API_SECRET_KEY);
   const data = useStaticQuery(
     graphql`
         query {
@@ -43,7 +42,7 @@ const SkillsSection = () => {
     `);
 
   useEffect(() => {
-    console.log("API key is undefined - ", process.env);
+    console.log("API key is undefined - ", process.env.GATSBYAPP_API_SECRET_KEY);
     let skillsArray = data.allMarkdownRemark.nodes[0].frontmatter.list;
     let skills = [];
     skillsArray.forEach(el => {
