@@ -43,7 +43,7 @@ const SkillsSection = () => {
     `);
 
   useEffect(() => {
-    console.log("API key is undefined - ", !apiSecretKey || apiSecretKey == undefined ? true : false);
+    console.log("API key is undefined - ", process.env);
     let skillsArray = data.allMarkdownRemark.nodes[0].frontmatter.list;
     let skills = [];
     skillsArray.forEach(el => {
