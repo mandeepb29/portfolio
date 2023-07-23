@@ -24,7 +24,7 @@ jobs:
           node-version: '18.x'  # Change this to your desired Node.js version
       
       - name: Set environment variable
-         env:
+        env:
           API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
 
       - name: Install dependencies
